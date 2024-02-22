@@ -1,5 +1,5 @@
 const countries = ['Japón', 'Nicaragua', 'Suiza', 'Australia', 'Venezuela']
-
+//* 1.1
 let ul = document.createElement('ul')
 for (const country of countries) {
   let li = document.createElement('li')
@@ -8,8 +8,10 @@ for (const country of countries) {
 }
 document.body.appendChild(ul)
 
+//* 1.2
 document.querySelector('.fn-remove-me').remove()
 
+//* 1.3
 const cars = ['Mazda 6', 'Ford fiesta', 'Audi A4', 'Toyota corola']
 
 let ul2 = document.createElement('ul')
