@@ -25,27 +25,34 @@
 let div = document.createElement('div')
 let divP = document.createElement('div')
 let div6P = document.createElement('div')
-let parrafDinamic = 'Soy Dinamico!'
+
 divP.className = 'añadir'
 div6P.classList.add('6-parraf')
-let arrayP = ['Lorem ', 'ipsum ', 'dolor ', 'sit ', 'amet ', 'consectetur ']
-const apps = ['Facebook', 'Netflix', 'Instagram', 'Snapchat', 'Twitter']
-let parraf = 'este es un parrafo generado '
 
+let parraf = 'este es un parrafo generado '
+//* 1.1
 document.body.appendChild(div)
 
+//* 1.2
 document.body.appendChild(divP)
 divP.insertAdjacentHTML('afterbegin', parraf)
 document.body.appendChild(div6P)
 
+//* 1.3
+let arrayP = ['Lorem ', 'ipsum ', 'dolor ', 'sit ', 'amet ', 'consectetur ']
 for (let i = 0; i < arrayP.length; i++) {
   let element = arrayP[i]
   div6P.append(element)
 }
+//* 1.4
+let parrafDinamic = 'Soy Dinamico!'
 document.body.append(parrafDinamic)
-
+//* 1.5
 let h2 = document.querySelector('.fn-insert-here')
 h2.append('Wubba Lubba dub dub')
+
+//* 1.6
+const apps = ['Facebook', 'Netflix', 'Instagram', 'Snapchat', 'Twitter']
 
 let ul = document.createElement('ul')
 
@@ -57,20 +64,20 @@ for (const rrss of apps) {
 
 h2.insertAdjacentElement('afterend', ul)
 
+//* 1.7
 let deleteNode = document.querySelectorAll('.fn-remove-me')
 console.log(document.querySelectorAll('.fn-remove-me'))
 for (const element of deleteNode) {
   element.remove()
 }
-
+//* 1.8
+let divMiddleReading = document.querySelector('div')
 let middleParraf = document.createElement('p')
 middleParraf.textContent = 'Voy en medio!'
 
-let divMiddleReading = document.querySelector('div')
 divMiddleReading.insertAdjacentElement('afterend', middleParraf)
-
+//* 1.9
 let insertDivsReading = document.querySelectorAll('div.fn-insert-here')
-console.log(insertDivsReading)
 
 for (const element of insertDivsReading) {
   let innerParraf = document.createElement('p')
