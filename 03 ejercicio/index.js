@@ -1,5 +1,6 @@
-const countries = ['Japón', 'Nicaragua', 'Suiza', 'Australia', 'Venezuela']
 //* 1.1
+const countries = ['Japón', 'Nicaragua', 'Suiza', 'Australia', 'Venezuela']
+
 let ul = document.createElement('ul')
 for (const country of countries) {
   let li = document.createElement('li')
@@ -10,7 +11,6 @@ document.body.appendChild(ul)
 
 //* 1.2
 document.querySelector('.fn-remove-me').remove()
-
 //* 1.3
 const cars = ['Mazda 6', 'Ford fiesta', 'Audi A4', 'Toyota corola']
 
@@ -25,7 +25,7 @@ let divToPrintCars = document
   .querySelector('[data-function="printHere"]')
   .appendChild(ul2)
 ul.insertAdjacentElement('afterend', divToPrintCars)
-
+//* 1.4
 const newCountries = [
   {
     title: 'Finland',
@@ -36,9 +36,9 @@ const newCountries = [
   { title: 'Grecee', imgUrl: 'https://picsum.photos/300/200?random=4' },
   { title: 'EE.UU', imgUrl: 'https://picsum.photos/300/200?random=5' }
 ]
-
+//* 1.6
 let deletePicture = (i) => {
-  clearInner()
+  clearInner() //funcion definida en linea 73
   newCountries.splice(i, 1)
   printRandowImg(newCountries)
   document.body.appendChild(buttonLastDelete)
@@ -65,7 +65,7 @@ let printRandowImg = (arrayOfPictures) => {
   }
 }
 printRandowImg(newCountries)
-
+//* 1.5
 let buttonLastDelete = document.createElement('button')
 buttonLastDelete.textContent = 'Last Delete'
 
@@ -80,10 +80,10 @@ let deleteLastFunction = (lastToDelete) => {
   clearInner() //*funcion donde se crea un nodo de los divs de las imagenes para eliminarlos todos y que cuando se vuelva a pintar el array estos se eliminen.
   newCountries.pop() //*Eliminar el ultimo array
 
-  printRandowImg(newCountries) //*volver a pintar el nuevo array despues de eliminar el ultimo
+  printRandowImg(lastToDelete) //*volver a pintar el nuevo array despues de eliminar el ultimo
 
-  document.body.appendChild(buttonLastDelete) //*Este codigo es para volver a colocar el boton cuando se elimine el div al que esta adyacente, por que cuando se elemina el primer div este se arriva al siguiente container.
-  console.log(newCountries)
+  document.body.appendChild(buttonLastDelete) //*Este codigo es para volver a colocar el boton cuando se elimine el div al que está adyacente, por que cuando se elemina el primer div este se se mueve al siguiente container.
+  console.log(lastToDelete)
 }
 
 buttonLastDelete.addEventListener('click', () =>
