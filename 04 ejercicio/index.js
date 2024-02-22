@@ -4,7 +4,7 @@
 //* 1.2 Añade un evento 'focus' que ejecute un console.log con el valor del input.
 
 //* 1.3 Añade un evento 'input' que ejecute un console.log con el valor del input. -->
-
+//*1.1
 let button = document.createElement('button')
 button.id = 'btn-to-click'
 button.className = 'nuevo'
@@ -13,15 +13,16 @@ button.textContent = 'Boton para recoger el evento en consola'
 button.addEventListener('click', (e) => console.log(e))
 
 document.body.appendChild(button)
-
+//* 1.2
 let inputsReaded = document.querySelectorAll('input')
 let valueGetting = (i) => {
   console.log(inputsReaded[i].value)
 }
 let readInputs = (arrayToRead) => {
-  for (let i = 0; i < inputsReaded.length; i++) {
+  for (let i = 0; i < arrayToRead.length; i++) {
     element = inputsReaded[i]
     element.addEventListener('focus', () => valueGetting(i))
+    //* 1.3
     element.addEventListener('input', () => valueGetting(i))
   }
 }
