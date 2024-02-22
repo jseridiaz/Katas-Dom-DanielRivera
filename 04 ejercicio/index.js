@@ -10,9 +10,7 @@ button.id = 'btn-to-click'
 button.className = 'nuevo'
 button.textContent = 'Boton para recoger el evento en consola'
 
-button.addEventListener('click', (e) => {
-  console.log(e)
-})
+button.addEventListener('click', (e) => console.log(e))
 
 document.body.appendChild(button)
 
